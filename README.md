@@ -1,19 +1,23 @@
-# musicproject
+# 音乐企业官网
 
-## Project setup
-```
+## 项目安装
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+### 项目运行为开发环境
+
+```bash
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 编译项目
+
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 依赖其他项目
+
+- [vue-awesome-swiper](https://www.npmjs.com/package/vue-awesome-swiper)

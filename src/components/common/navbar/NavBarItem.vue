@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item" @click="itemClick">
+  <div class="tab-bar-item " @click="itemClick">
     <slot></slot>
   </div>
 </template>

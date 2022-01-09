@@ -1,0 +1,268 @@
+<template>
+  <div class="load" :class="{hides:hideLoad}">
+    <div class="dot"></div>
+    <div class="outline"><span></span></div>
+  </div>
+</template>
+
+
+<script>
+export default {
+  name:'Loadding',
+  data(){
+    return {
+      hideLoad:false,
+    }
+  },
+  methods:{
+    hide:function() {
+      this.hideLoad = true;
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+$size: 120px;
+$color1: #3a60db;
+$color2: #ffffff;
+@mixin keyframes($name) {
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin animation($prop...) {
+  -o-animation: $prop;
+  -moz-animation: $prop;
+  -ms-animation: $prop;
+  -webkit-animation: $prop;
+  animation: $prop;
+}
+@mixin transform($prop...) {
+  -o-transform: $prop;
+  -moz-transform: $prop;
+  -webkit-transform: $prop;
+  -ms-transform: $prop;
+  transform: $prop;
+}
+@mixin transform-origin($prop...) {
+  -o-transform-origin: $prop;
+  -moz-transform-origin: $prop;
+  -webkit-transform-origin: $prop;
+  -ms-transform-origin: $prop;
+  transform-origin: $prop;
+}
+.hides {
+  animation: flickerAnimation ease 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flickerAnimation { /* flame pulses */
+  0%   { opacity:1; }
+  100% { opacity:0; }
+}
+
+.load {
+  background:#fff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 999999999999999;
+  top: 0;
+  left: 0;
+  &:before,
+  &:after,
+  .dot,
+  .outline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    border-radius: 50%;
+  }
+  .dot {
+    width: #{$size - $size / 100 * 20};
+    height: #{$size - $size / 100 * 20};
+    background: $color2;
+    @include animation(in 4s linear infinite);
+    z-index: 2;
+  }
+  &:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    background: $color1;
+    @include animation(out1 4s linear infinite);
+  }
+  &:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    background: $color2;
+    @include animation(out2 4s linear infinite);
+  }
+  .outline {
+    width: $size;
+    height: $size;
+    z-index: 2;
+    span {
+      width: $size / 2 + 8;
+      height: $size / 2 + 8;
+      @include transform-origin(100% 100%);
+      @include transform(rotate(45deg) skewX(80deg));
+      overflow: hidden;
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      @include animation(outline 4s linear infinite);
+      &:before {
+        content: "";
+        display: block;
+        border: solid 5px #fff;
+        width: 200%;
+        height: 200%;
+        border-radius: 50%;
+        @include transform(skewX(-80deg));
+        @include animation(outlineBefore 4s linear infinite);
+      }
+    }
+  }
+}
+
+@include keyframes(outline) {
+  0% {
+    @include transform(rotate(0deg) skewX(80deg));
+  }
+  25% {
+    @include transform(rotate(500deg) skewX(15deg));
+  }
+  50% {
+    @include transform(rotate(1000deg) skewX(40deg));
+  }
+  75% {
+    @include transform(rotate(1500deg) skewX(60deg));
+  }
+  100% {
+    @include transform(rotate(2160deg) skewX(80deg));
+  }
+}
+
+@include keyframes(outlineBefore) {
+  0% {
+    @include transform(skewX(-80deg));
+    border: solid 5px #ffffff;
+  }
+  25% {
+    @include transform(skewX(-15deg));
+    border: solid 5px #ffffff;
+  }
+  49% {
+    border: solid 5px #ffffff;
+  }
+  50% {
+    @include transform(skewX(-40deg));
+    border: solid 5px #3463eb;
+  }
+  75% {
+    @include transform(skewX(-60deg));
+    border: solid 5px #3463eb;
+  }
+  100% {
+    @include transform(skewX(-80deg));
+    border: solid 5px #3463eb;
+  }
+}
+
+@include keyframes(in) {
+  0% {
+    width: #{$size + $size / 100 * 20};
+    height: #{$size + $size / 100 * 20};
+    background: $color2;
+  }
+  40% {
+    width: 0px;
+    height: 0px;
+    background: $color2;
+  }
+  41% {
+    width: 0px;
+    height: 0px;
+    background: $color1;
+  }
+  50% {
+    width: #{$size + $size / 100 * 20};
+    height: #{$size + $size / 100 * 20};
+    background: $color1;
+  }
+  90% {
+    width: 0px;
+    height: 0px;
+    background: $color1;
+  }
+  91% {
+    width: 0px;
+    height: 0px;
+    background: $color2;
+  }
+  100% {
+    width: #{$size + $size / 100 * 20};
+    height: #{$size + $size / 100 * 20};
+    background: $color2;
+  }
+}
+
+@include keyframes(out1) {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  30% {
+    width: 120vw;
+    height: 120vw;
+  }
+  100% {
+    width: 120vw;
+    height: 120vw;
+  }
+}
+
+@include keyframes(out2) {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  30% {
+    width: 0px;
+    height: 0px;
+  }
+  60% {
+    width: 120vw;
+    height: 120vw;
+  }
+  100% {
+    width: 120vw;
+    height: 120vw;
+  }
+}
+
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+</style>

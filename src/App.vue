@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Loadding ref="loadding"></Loadding>
     <main-nav-bar />
     <router-view />
     <foot />
@@ -7,7 +8,7 @@
 </template>
 
 <script>
-
+import Loadding from "./components/common/loadding/Loadding"
 import MainNavBar from "./components/content/MainNavBar/MainNavBar";
 import Foot from "./components/content/footer/Foot";
 
@@ -16,9 +17,12 @@ export default {
   components: {
     MainNavBar,
     Foot,
+    Loadding
   },
   mounted() {
-
+    setTimeout(() => {
+      this.$refs.loadding.hide();
+    }, 1000);
   }
 };
 </script>
