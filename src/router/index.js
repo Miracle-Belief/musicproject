@@ -16,22 +16,32 @@ Vue.use(VueRouter)
 const routes = [
    {
      path: '',
-     redirect: '/home'
+     title:'首页',
+     redirect: '/home',
    },
    {
      path: '/home',
+     title:'首页',
      component: Home
    },
    {
      path: '/musicPrefecture',
+     title:'音乐专区',
      component: Musicprefecture
    },
    {
     path: '/artistService',
+    title:'艺人服务',
+    component: Artistservice
+  },
+  {
+    path:'/news',
+    title:'新闻动态',
     component: Artistservice
   },
   {
     path: '/about',
+    title:'关于我们',
     component: About
   }
 ]

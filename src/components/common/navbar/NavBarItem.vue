@@ -30,6 +30,9 @@ export default {
 <style scoped>
 .tab-bar-item {
   display: inline-block;
+}
 
+.tab-bar-item + .tab-bar-item {
+  margin-left: 24px;
 }
 </style>
