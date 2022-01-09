@@ -20,9 +20,8 @@ export default {
     Loadding
   },
   mounted() {
-    setTimeout(() => {
-      // this.$refs.loadding.hide();
-    }, 1000);
+    // 停止加载动画
+    // this.$refs.loadding.hide();
   }
 };
 </script>

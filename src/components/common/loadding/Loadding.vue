@@ -1,5 +1,5 @@
 <template>
-  <div class="load" :class="{hides:hideLoad}">
+  <div class="load" v-if="hideLoad">
     <div class="dot"></div>
     <div class="outline"><span></span></div>
   </div>
