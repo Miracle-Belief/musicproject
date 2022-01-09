@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Loadding ref="loadding"></Loadding>
+    <!-- <Loadding ref="loadding"></Loadding> -->
     <main-nav-bar />
     <router-view />
     <foot />
@@ -21,7 +21,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.$refs.loadding.hide();
+      // this.$refs.loadding.hide();
     }, 1000);
   }
 };

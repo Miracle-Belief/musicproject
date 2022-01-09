@@ -1,57 +1,25 @@
 
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <swiper-slide class="swiper-item">
+    <swiper-slide
+      class="swiper-item"
+      v-for="swiper in bannerList"
+      :key="swiper.id"
+      :style="{ backgroundImage: 'url(' + swiper.img + ')' }"
+    >
       <div class="container">
-        <div class="title" data-swiper-parallax="-100">Slide 2</div>
-        <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
+        <div class="title" data-swiper-parallax="-100">{{ swiper.title }}</div>
+        <div class="subtitle" data-swiper-parallax="-240">
+          {{ swiper.subTitle }}
+        </div>
         <div class="text" data-swiper-parallax="-360">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
-            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
-            libero. Aenean feugiat non eros quis feugiat.
+            {{ swiper.text }}
           </p>
         </div>
       </div>
     </swiper-slide>
-    <swiper-slide class="swiper-item">
-      <div class="container">
-        <div class="title" data-swiper-parallax="-100">Slide 2</div>
-        <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-        <div class="text" data-swiper-parallax="-360">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
-            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
-            libero. Aenean feugiat non eros quis feugiat.
-          </p>
-        </div>
-      </div>
-    </swiper-slide>
-    <swiper-slide class="swiper-item c">
-      <div class="container">
-        <div class="title" data-swiper-parallax="-100">Slide 2</div>
-        <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-        <div class="text" data-swiper-parallax="-360">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
-            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
-            libero. Aenean feugiat non eros quis feugiat.
-          </p>
-        </div>
-      </div>
-    </swiper-slide>
+
     <div class="swiper-pagination" slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -60,6 +28,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import SwiperItem from "./SwiperItem.vue";
 import "swiper/css/swiper.css";
 
 export default {
@@ -67,6 +36,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+    SwiperItem,
   },
   data() {
     return {
@@ -90,6 +60,49 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
+
+      // 轮播图数据
+      bannerList: [
+        {
+          id:1,
+          title: "Title",
+          subTitle: "Subtitle",
+          img: "https://images.pexels.com/photos/6120211/pexels-photo-6120211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
+            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
+            libero. Aenean feugiat non eros quis feugiat.`,
+        },
+        {
+          id:2,
+          title: "Title",
+          subTitle: "Subtitle",
+          img: "https://images.pexels.com/photos/3765118/pexels-photo-3765118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
+            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
+            libero. Aenean feugiat non eros quis feugiat.`,
+        },
+        {
+          id:3,
+          title: "Title",
+          subTitle: "Subtitle",
+          img: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper
+            velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut
+            libero. Aenean feugiat non eros quis feugiat.`,
+        },
+      ],
     };
   },
 };
@@ -101,22 +114,23 @@ export default {
 }
 
 .swiper-item {
-  background: red;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #efefef;
 }
 
 .swiper {
   width: 100%;
-  height: 380px;
-  background: red;
+  height: 480px;
 
   .swiper-slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #990000;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0;
     background-color: transparent;
 
     .title {

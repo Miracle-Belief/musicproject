@@ -23,7 +23,7 @@ body {
   -webkit-tap-heighlight-color: transparent;
   background: var(--color-background);
   color: var(--color-text);
-  width: 100vw;
+  width: 100%;
 }
 
 a {
