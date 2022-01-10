@@ -28,15 +28,13 @@
 
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import SwiperItem from "./SwiperItem.vue";
 import "swiper/css/swiper.css";
 
 export default {
   name: "swiper-example-loop",
   components: {
     Swiper,
-    SwiperSlide,
-    SwiperItem,
+    SwiperSlide
   },
   data() {
     return {

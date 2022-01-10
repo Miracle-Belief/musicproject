@@ -5,12 +5,14 @@
         <img src="~assets/img/common/logo.png" />
       </template>
 
+
       <template slot="right">
         <nav-bar-item
-          v-for="route in routes"
-          :key="route.path"
-          :path="route.path"
-          >{{ route.title }}</nav-bar-item>
+          v-for="item in routes"
+          :key="item.path"
+          :path="item.path"
+          :class="{active:$route.path == item.path}"
+          >{{ item.title }}</nav-bar-item>
       </template>
     </nav-bar>
   </div>
@@ -27,10 +29,11 @@ export default {
   },
   data() {
     return {
-      routes:[],
+      routes:[]
     };
   },
   mounted() {
+    console.log(this.$router);
     // 出栈第一个路由
     const routes = this.$router.options.routes
     routes.shift()
@@ -40,4 +43,8 @@ export default {
 </script>
 
 <style scoped>
+.active {
+
+  color: var(--color-height-text);
+}
 </style>

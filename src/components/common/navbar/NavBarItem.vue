@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item " @click="itemClick">
+  <div class="tab-bar-item"  @click="itemClick">
     <slot></slot>
   </div>
 </template>
@@ -14,8 +14,14 @@ export default {
       default: "deeppink",
     },
   },
+  data() {
+    return {
+
+    }
+  },
   methods: {
-    itemClick:function() {
+    itemClick() {
+      console.log(this.$router.history);
       let current_path = this.$router.history.current.path
       if (current_path == this.path) {
         // 本次点击导航和上次一样,不必跳转
@@ -30,9 +36,13 @@ export default {
 <style scoped>
 .tab-bar-item {
   display: inline-block;
+  cursor:pointer;
 }
 
 .tab-bar-item + .tab-bar-item {
   margin-left: 24px;
 }
+.active {
+    color: var(--color-height-text);
+  }
 </style>

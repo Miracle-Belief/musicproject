@@ -1,16 +1,16 @@
 <template>
   <div id="home">
-    <carrousel></carrousel>
+    <swiper></swiper>
   </div>
 </template>
 
 <script>
-  import carrousel from "./swiper/swiper-example-parallax.vue"
+  import Swiper from "components/content/swiper/Swiper"
 
   export default {
     name: 'Home',
     components: {
-      carrousel
+      Swiper
     },
     data() {
       return {
