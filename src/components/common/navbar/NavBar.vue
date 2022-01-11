@@ -25,7 +25,7 @@ export default {
 .nav-bar {
   display: flex;
   min-height: 80px;
-  line-height: 80px;
+  padding:20px 0;
   background-color: #fff;
 }
 .left {

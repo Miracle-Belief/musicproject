@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Loadding from "./components/common/loadding/Loadding"
+import Loadding from "./components/common/loadding/Loadding";
 import MainNavBar from "./components/content/MainNavBar/MainNavBar";
 import Foot from "./components/content/footer/Foot";
 
@@ -17,13 +17,15 @@ export default {
   components: {
     MainNavBar,
     Foot,
-    Loadding
+    Loadding,
   },
   mounted() {
     // 停止加载动画
     // this.$refs.loadding.hide();
+  },
+  updated() {
 
-  }
+  },
 };
 </script>
 

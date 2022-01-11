@@ -1,18 +1,18 @@
 <template>
   <div class="development">
-    <header>
-      <div class="container text-center">
-        <h1>Vertical Timeline</h1>
-        <p>Sava Lazic</p>
+    <header >
+      <div class="container text-center" data-aos="fade-down">
+        <h1>发展历程</h1>
+        <p>Development History</p>
       </div>
     </header>
     <section class="timeline">
       <div class="container">
         <div
           class="timeline-item"
+          data-aos="fade-up"
           v-for="(item, index) in timelineList"
           :key="index"
-          data-aos="zoom-out-right"
         >
           <div class="timeline-img"></div>
 
@@ -31,7 +31,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Development",
   data() {
@@ -76,8 +75,7 @@ export default {
       ],
     };
   },
-  mounted(){
-  }
+
 };
 </script>
 
@@ -116,7 +114,7 @@ h1 {
 header {
   background: $primary;
   color: $text;
-  padding: 150px 0;
+  padding: 80px 0;
   margin-top: 50px;
 
   p {

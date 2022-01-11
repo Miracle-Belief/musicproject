@@ -17,8 +17,19 @@
       Headers,
       Introduction,
       Development
-    }
+    },
 
+    mounted(){
+      this.$forceUpdate();
+      this.$nextTick(() => {
+          this.aos.init({
+              offset: 200,
+              duration: 600,
+              easing: 'ease-in-sine',
+              delay: 100
+          });
+      });
+    }
   }
 </script>
 

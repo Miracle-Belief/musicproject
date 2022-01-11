@@ -3,11 +3,10 @@ import App from './App.vue'
 import router from './router/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// 动态效果库
-import AOS from "aos"
-import 'aos/dist/aos.css'
-AOS.init();
 
+import 'aos/dist/aos.css'
+import AOS from 'aos'
+Vue.prototype.aos = AOS
 
 Vue.config.productionTip = false
 

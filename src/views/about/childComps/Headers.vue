@@ -1,9 +1,6 @@
 <template>
-  <div class="headers">
-    <div class="row">
-      <img src="~assets/img/about/background-img.png" alt="" />
-    </div>
-
+  <div class="headers" data-aos="zoom-out-down">
+      <img src="~assets/img/about/background-img.png" style="width:100%" alt="" />
   </div>
 </template>
 

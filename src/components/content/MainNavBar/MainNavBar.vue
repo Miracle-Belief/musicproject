@@ -5,7 +5,7 @@
         <img src="~assets/img/common/logo.png" />
       </template>
 
-      
+
       <template slot="right">
         <nav-bar-item
           v-for="item in routes"
@@ -43,8 +43,5 @@ export default {
 </script>
 
 <style scoped>
-.active {
 
-  color: var(--color-height-text);
-}
 </style>

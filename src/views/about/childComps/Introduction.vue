@@ -2,10 +2,10 @@
   <div class="introduction">
      <div class="main container">
       <div class="row">
-          <div class="col-md-4 col-xs-12 col-sm-4 left">
+        <div class="col-md-4 col-xs-12 col-sm-4 left" data-aos="fade-right">
           <img :src="imgsList.imgs" alt=""/>
         </div>
-        <div class="col-md-8 col-xs-12 col-sm-8 desic">{{desicList.desic}}</div>
+        <div class="col-md-8 col-xs-12 col-sm-8 desic" data-aos="fade-left">{{desicList.desic}}</div>
       </div>
     </div>
   </div>
