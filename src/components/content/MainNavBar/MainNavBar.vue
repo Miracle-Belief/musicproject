@@ -5,7 +5,7 @@
         <img src="~assets/img/common/logo.png" />
       </template>
 
-
+      
       <template slot="right">
         <nav-bar-item
           v-for="item in routes"
