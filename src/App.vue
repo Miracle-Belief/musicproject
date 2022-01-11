@@ -22,6 +22,7 @@ export default {
   mounted() {
     // 停止加载动画
     // this.$refs.loadding.hide();
+
   }
 };
 </script>
