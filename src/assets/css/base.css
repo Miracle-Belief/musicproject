@@ -1,7 +1,7 @@
 @import "./normalize.css";
 :root {
   --color-text: #666;
-  --color-height-text: #ff5777;
+  --color-height-text: #dd2748;
   --color-tint: #ff8198;
   --color-background: #fff;
   --font-size: 14px;
@@ -48,3 +48,30 @@ a {
 .right {
   float: right;
 }
+
+.music-list-desic {
+  margin: 51px auto 27px auto;
+}
+.music-list-desic p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.music-list-desic span {
+  font-size: 14px;
+  color: rgba(166, 166, 166, 1);
+}
+
+.about {
+  text-align: center;
+}
+.about-title {
+  color: #333;
+}
+.about-sub {
+  color: #ff2727;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+

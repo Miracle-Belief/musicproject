@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <h1>艺人服务</h1>
   </div>
 </template>
 

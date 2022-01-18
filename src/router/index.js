@@ -5,6 +5,7 @@ import Vue from 'vue'
 const Home = () => import('../views/home/Home')
 const Musicprefecture = () => import('../views/musicPrefecture/Musicprefecture')
 const Artistservice = () => import('../views/artistService/Artistservice')
+const News = () => import('../views/news/News')
 const About = () => import('../views/about/About')
 
 
@@ -37,7 +38,7 @@ const routes = [
   {
     path:'/news',
     title:'新闻动态',
-    component: Artistservice
+    component: News
   },
   {
     path: '/about',
